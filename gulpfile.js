@@ -1,6 +1,6 @@
 var  gulp = require('gulp');
 var  pug = require('gulp-pug');
-var  sass = require('gulp-sass');
+var  less = require('gulp-less');
 var  autoprefix = require('gulp-autoprefixer');
 var  cssbeautify = require('gulp-cssbeautify');
 var  svgSprite = require('gulp-svg-sprites');
@@ -10,8 +10,6 @@ var  browserSync = require('browser-sync');
 var  watch = require('gulp-watch');
 var  runSequence = require('run-sequence');
 
-
-
 gulp.task('browserSync', function() {
 	browserSync({
 		server: {
@@ -19,7 +17,6 @@ gulp.task('browserSync', function() {
 		}
 	})
 });
-
 
 gulp.task('pug', function() {
 	return gulp.src('app/pug/pages/*.pug')
@@ -29,9 +26,9 @@ gulp.task('pug', function() {
 });
 
 
-gulp.task('scss', function() {
-	return gulp.src('app/components/*.scss')
-	.pipe(sass())
+gulp.task('less', function() {
+	return gulp.src('app/components/*.less')
+	.pipe(less())
 	.pipe(autoprefix())
 	.pipe(cssbeautify())
 	.pipe(gulp.dest('dist/css'))
@@ -75,9 +72,9 @@ gulp.task('svg', function () {
 
 
 
-gulp.task('watch', ['browserSync', 'pug', 'scss',  'fonts','js', 'svg'], function() {
+gulp.task('watch', ['browserSync', 'pug', 'less',  'fonts','js', 'svg'], function() {
 	gulp.watch('app/pug/pages/**/*.pug',  ['pug']);
-	gulp.watch('app/components/**/*.scss',  ['scss']);
+	gulp.watch('app/components/**/*.less',  ['less']);
 	gulp.watch('app/fonts/**/*',  ['fonts']);
 	gulp.watch('app/js/**/*.js', ['js']);
 	gulp.watch('app/icons/*.svg', ['svg']);
@@ -86,7 +83,7 @@ gulp.task('watch', ['browserSync', 'pug', 'scss',  'fonts','js', 'svg'], functio
 
 
 gulp.task('default', function(callback) {
-  	runSequence(['pug', 'scss', 'js', 'fonts', 'svg', 'browserSync', 'watch'],
+  	runSequence(['pug', 'less', 'js', 'fonts', 'svg', 'browserSync', 'watch'],
 		callback
 	)
 });
