@@ -1,8 +1,13 @@
 var  gulp = require('gulp');
+var  plumber = require('gulp-plumber');
 var  pug = require('gulp-pug');
 var  less = require('gulp-less');
-var  autoprefix = require('gulp-autoprefixer');
+var  minify = require("gulp-csso");
+var rename = require("gulp-rename");
 var  cssbeautify = require('gulp-cssbeautify');
+var  postcss = require("gulp-postcss");
+var  autoprefixer = require("autoprefixer");
+var  mqpacker = require("css-mqpacker");
 var  svgSprite = require('gulp-svg-sprites');
 var  cheerio = require('gulp-cheerio');
 var  replace = require('gulp-replace');
@@ -27,11 +32,25 @@ gulp.task('pug', function() {
 
 
 gulp.task('less', function() {
-	return gulp.src('app/components/*.less')
+	return gulp.src('app/styles/style.less')
+	.pipe(plumber())
 	.pipe(less())
-	.pipe(autoprefix())
+	.pipe(postcss([
+		autoprefixer({overrideBrowserslist: [
+			"last 1 version",
+			"last 2 Chrome versions",
+			"last 2 Firefox versions",
+			"last 2 Opera versions",
+			"last 2 Edge versions",
+			"IE 11"
+		]}),
+		mqpacker({
+			sort: true
+		})
+	]))
 	.pipe(cssbeautify())
-	.pipe(gulp.dest('dist/css'))
+	.pipe(minify())
+	.pipe(gulp.dest("dist/css"))
 	.pipe(browserSync.reload({stream: true}))
 });
 
@@ -74,7 +93,7 @@ gulp.task('svg', function () {
 
 gulp.task('watch', ['browserSync', 'pug', 'less',  'fonts','js', 'svg'], function() {
 	gulp.watch('app/pug/pages/**/*.pug',  ['pug']);
-	gulp.watch('app/components/**/*.less',  ['less']);
+	gulp.watch('app/styles/style.less',  ['less']);
 	gulp.watch('app/fonts/**/*',  ['fonts']);
 	gulp.watch('app/js/**/*.js', ['js']);
 	gulp.watch('app/icons/*.svg', ['svg']);
