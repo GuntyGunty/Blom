@@ -1,0 +1,8 @@
+include ../link/link
+
+mixin nav(data)
+  ul.nav_list
+    for i in data
+      li.nav__item
+        +link('#', i)
+    

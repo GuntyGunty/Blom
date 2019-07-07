@@ -1,4 +1,5 @@
 block variables
+include ../../components/breadcrumbs/breadcrumbs
 
 doctype html
 html
@@ -14,9 +15,12 @@ html
 
 
 	body
-		include ../../components/header/header
+		div(class=`body ${pageClass}`)
+			.body-top
+				include ../../components/header/header
+				+breadcrumbs(['Home', pageTitle])
 
-		block content
+			block content
 
 
-		include ../../components/footer/footer
+			include ../../components/footer/footer

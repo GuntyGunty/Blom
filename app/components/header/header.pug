@@ -1,0 +1,16 @@
+include ../logo/logo
+include ../nav/nav
+include ../title/title
+
+
+header.header
+  .header__bg
+    .container
+      .header__logo
+        +logo
+      .header__nav
+        +nav(['Home', 'ABOUT US', 'SERVICES', 'PORTFOLIO', 'TEAM', 'PRICE', 'BLOG', 'CONTACT'])
+      .header__title
+        +title('ABOUT', 'US')
+      //- .header_breadcrumbs
+      //-   +breadcrumbs(['Home', 'About Us'])

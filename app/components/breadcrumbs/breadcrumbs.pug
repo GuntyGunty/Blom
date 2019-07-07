@@ -1,0 +1,8 @@
+include ../link/link
+
+mixin breadcrumbs(data)
+  ul.breadcrumbs
+    for i in data
+      li.breadcrumbs__item
+        +link('#', i)
+
