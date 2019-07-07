@@ -1,4 +1,4 @@
-<svg id="Logo" xmlns="http://www.w3.org/2000/svg" width="165" height="47" viewBox="0 0 165 47">
+<svg id="Группа_1" data-name="Группа 1" xmlns="http://www.w3.org/2000/svg" width="47" height="47" viewBox="0 0 47 47">
   <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c138 79.159824, 2016/09/14-01:09:01        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -30,20 +30,14 @@
 <defs>
     <style>
       .cls-1 {
-        font-size: 55px;
-        font-family: "Montserrat SemiBold";
-      }
-
-      .cls-1, .cls-3 {
-        fill: #fff;
+        fill: #753d9d;
       }
 
       .cls-2 {
-        fill: #753d9d;
+        fill: #fff;
       }
     </style>
   </defs>
-  <text id="BL_M" data-name="BL    M" class="cls-1" x="-3.999" y="43">BL    M</text>
-  <circle class="cls-2" cx="93.5" cy="23.5" r="23.5"/>
-  <circle class="cls-3" cx="94" cy="24" r="8"/>
+  <circle class="cls-1" cx="23.5" cy="23.5" r="23.5"/>
+  <circle class="cls-2" cx="24" cy="24" r="8"/>
 </svg>
