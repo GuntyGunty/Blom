@@ -1,8 +1,16 @@
 extends ../templates/default
 
+include ../../components/typography/typography
+include ../../components/square/square
+
 block variables 
   - var pageTitle = "About Us"
   - var pageClass = "about"
 
 block content
-  span 3434sdsd
+  div.wrapper._flex
+    .wrapper__right
+      +typography
+    .wrapper__left
+      +square(blue, "#", 'Interactive digital experiences are continually')
+      +square(winnings "#", '16 awards winning')
