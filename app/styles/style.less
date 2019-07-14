@@ -3,10 +3,23 @@
 @import url("variables.less");
 @import url("mixins.less");
 
+@import url("../components/logo/logo.less");
+@import url("../components/header/header.less");
+@import url("../components/nav/nav.less");
+@import url("../components/link/link.less");
+@import url("../components/title/title.less");
+@import url("../components/breadcrumbs/breadcrumbs.less");
+
 body {
   font-family: @ff;
+  font-weight: 400;
 }
 
 .body-top {
   .background('../img/main-bg.jpg', 'no-repeat', 'center', 'contain');
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
 }

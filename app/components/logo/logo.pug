@@ -1,6 +1,7 @@
 mixin logo(data)
   a(class="logo" href="#")
     span.logo_text BL
-    svg(class="logo_icon")
-      use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-circle")
+    span.logo_icon-wrapper
+      svg(class="logo_icon")
+        use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-circle")
     span.logo_text M

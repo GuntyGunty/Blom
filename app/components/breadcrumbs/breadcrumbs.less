@@ -1,0 +1,38 @@
+.breadcrumbs {
+  display: flex;
+  align-items: baseline;
+  font-size: 0;
+}
+
+.breadcrumbs__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .link {
+    font-size: 15px;
+    line-height: 26px;
+    text-transform: inherit;
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 23px;
+    height: 16px;
+    .background("../img/arrow-white.svg", no-repeat, center, contain);
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  &:last-child::after {
+    display: none;
+  }
+
+  &:last-child {
+    .link {
+      color: @violet;
+    }
+  }
+
+}
