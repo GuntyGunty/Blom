@@ -93,7 +93,7 @@ gulp.task('svg', function () {
 
 gulp.task('watch', ['browserSync', 'pug', 'less',  'fonts','js', 'svg'], function() {
 	gulp.watch('app/**/*.pug',  ['pug']);
-	gulp.watch('app/styles/style.less',  ['less']);
+	gulp.watch('app/*.less',  ['less']);
 	gulp.watch('app/fonts/**/*',  ['fonts']);
 	gulp.watch('app/js/**/*.js', ['js']);
 	gulp.watch('app/icons/*.svg', ['svg']);

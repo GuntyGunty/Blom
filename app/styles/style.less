@@ -9,6 +9,10 @@
 @import url("../components/link/link.less");
 @import url("../components/title/title.less");
 @import url("../components/breadcrumbs/breadcrumbs.less");
+@import url("../components/square/square.less");
+@import url("../components/typography/typography.less");
+@import url("../components/slider/slider.less");
+@import url("../components/team/team.less");
 
 body {
   font-family: @ff;
@@ -19,10 +23,18 @@ body {
   .background('../img/main-bg.jpg', 'no-repeat', 'center', 'contain');
 }
 
+.body.about .wrapper._flex {
+  padding-top: 76px;
+}
+
+.body.about .wrapper__left{
+  margin-right: 30px;
+}
+
 .container {
   max-width: 1140px;
   margin: 0 auto;
 }
-.wrapper_flex {
+.wrapper._flex {
   display: flex;
 }

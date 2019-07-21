@@ -1,0 +1,42 @@
+.square {
+  border-radius: 6px;
+  height: 255px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 360px;
+  flex-direction: column;
+  font-size: 21px;
+  line-height: 29px;
+  color: @white;
+  padding-left: 30px;
+  padding-right: 43px;
+  margin-bottom: 30px;
+  flex: 0 0 360px;
+  
+  &.blue {
+    background-color: @deep_violet;
+  }
+
+  &.winners {
+    position: relative;
+    background-color: @square_violet;
+
+    &::before {
+      content: "";
+      display: block;
+      height: 102px;
+      width: 100px;
+      background-image: url("../img/winners.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      margin-bottom: 27px;
+    }
+  }
+}
+
+.square__link{
+  color: @white;
+}
+
